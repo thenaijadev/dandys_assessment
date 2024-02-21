@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants/app_colors.dart';
@@ -7,6 +8,7 @@ class TextWidget extends StatelessWidget {
   const TextWidget(
       {super.key,
       required this.text,
+      this.decoration,
       this.fontSize = 16,
       this.fontWeight = FontWeight.normal,
       this.color = AppColors.black,
@@ -20,6 +22,7 @@ class TextWidget extends StatelessWidget {
   final Color color;
   final TextAlign? textAlign;
   final TextOverflow? overflow;
+  final TextDecoration? decoration;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -29,7 +32,12 @@ class TextWidget extends StatelessWidget {
         textAlign: textAlign,
         overflow: overflow,
         style: GoogleFonts.poppins(
-            color: color, fontSize: fontSize, fontWeight: fontWeight),
+          color: color,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          decorationThickness: 2,
+          decoration: decoration,
+        ),
       ),
     );
   }

@@ -5,7 +5,6 @@ class InputFieldWidget extends StatelessWidget {
   const InputFieldWidget(
       {super.key,
       required this.label,
-      required this.hintColor,
       this.initialValue,
       required this.hintText,
       this.hintSize = 14,
@@ -40,7 +39,7 @@ class InputFieldWidget extends StatelessWidget {
   final double enabledBorderRadius;
   final double verticalContentPadding;
   final FontWeight fontWeight;
-  final Color hintColor;
+
   final double labelFontSize;
   final TextEditingController? controller;
   @override
@@ -54,7 +53,7 @@ class InputFieldWidget extends StatelessWidget {
             padding: padding,
             child: TextWidget(
               text: label,
-              color: Theme.of(context).colorScheme.inversePrimary,
+              color: Theme.of(context).colorScheme.primary,
               fontWeight: fontWeight,
               fontSize: labelFontSize,
             ),
@@ -64,6 +63,7 @@ class InputFieldWidget extends StatelessWidget {
             onTap: onTap,
             key: textFieldkey,
             initialValue: initialValue,
+            style: TextStyle(color: Theme.of(context).colorScheme.primary),
             onChanged: onChanged,
             maxLines: maxLines,
             validator: validator,
@@ -72,7 +72,7 @@ class InputFieldWidget extends StatelessWidget {
               prefixIcon: prefixicon,
               suffixIcon: suffixIcon,
               hintStyle: TextStyle(
-                  color: hintColor,
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: hintSize,
                   fontFamily: 'Neue Plak'),
               contentPadding: EdgeInsets.symmetric(
@@ -94,7 +94,7 @@ class InputFieldWidget extends StatelessWidget {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.inversePrimary,
+                  color: Theme.of(context).colorScheme.primary,
                   width: 2.0,
                 ),
               ),

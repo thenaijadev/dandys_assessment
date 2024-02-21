@@ -29,38 +29,10 @@ class MyDrawer extends StatelessWidget {
               ),
               onTap: () => Navigator.pop(context),
             ),
-            ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, Routes.profile);
-              },
-              leading: Icon(
-                Icons.person,
-                color: Theme.of(context).colorScheme.inversePrimary,
-              ),
-              title: TextWidget(
-                text: "P R O F I L E",
-                color: Theme.of(context).colorScheme.secondary,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, Routes.users);
-              },
-              leading: Icon(
-                Icons.group,
-                color: Theme.of(context).colorScheme.inversePrimary,
-              ),
-              title: TextWidget(
-                text: "U S E R S",
-                color: Theme.of(context).colorScheme.secondary,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
             BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
                 if (state is AuthStateIsNotLoggedIn) {
-                  Navigator.popAndPushNamed(context, Routes.landing);
+                  Navigator.popAndPushNamed(context, Routes.login);
                 }
               },
               builder: (context, state) {

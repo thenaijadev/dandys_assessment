@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         ],
         backgroundColor: Theme.of(context).colorScheme.background,
         title: TextWidget(
-          text: "The Wall",
+          text: "Grey",
           fontWeight: FontWeight.bold,
           color: Theme.of(context).colorScheme.inversePrimary,
         ),
